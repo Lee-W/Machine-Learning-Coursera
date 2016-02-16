@@ -98,10 +98,10 @@ pause;
 
 
 %% =========== Part 5: Learning Curve for Linear Regression =============
-%  Next, you should implement the learningCurve function. 
+%  Next, you should implement the learningCurve function.
 %
 %  Write Up Note: Since the model is underfitting the data, we expect to
-%                 see a graph with "high bias" -- slide 8 in ML-advice.pdf 
+%                 see a graph with "high bias" -- slide 8 in ML-advice.pdf
 %
 
 lambda = 0;
