@@ -23,11 +23,21 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+recommended_value = [0.01 0.03 0.1 0.3 1 3 10 30];
 
-
-
-
-
+cur_rate = 0;
+predictions = zeros(size(y, 1), 1);
+for i = recommended_value
+	for j = recommended_value
+		model= svmTrain(X, y, i, @(Xval, yval) gaussianKernel(Xval, yval, j));
+		predictions = svmPredict(model, Xval);
+		if cur_rate < mean(double(predictions == yval))
+		 	cur_rate = mean(double(predictions == yval));
+ 		 	C = i;
+ 		 	sigma = j;
+ 		 end
+ 	end
+end
 
 % =========================================================================
 
