@@ -47,6 +47,9 @@ x = zeros(n, 1);
 %              x = [ 0 0 0 0 1 0 0 0 ... 0 0 0 0 1 ... 0 0 0 1 0 ..];
 %
 %
+for indice=word_indices
+	x(indice) = 1
+end
 
 
 
