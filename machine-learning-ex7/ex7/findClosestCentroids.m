@@ -21,9 +21,16 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
+for sample_idx=1:size(X, 1)
+	dis = Inf;
+	for centroid_idx=1:K
+		current_dis = sum((X(sample_idx, :) - centroids(centroid_idx, :)) .^ 2);
+		if dis > current_dis
+			dis = current_dis;
+			idx(sample_idx) = centroid_idx;
+		end
+	end
+end
 
 
 

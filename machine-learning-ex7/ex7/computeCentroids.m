@@ -26,15 +26,13 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-
-
-
-
-
-
-
+for i=1:K
+	current_idx = find(idx == i);
+	if mean(X(current_idx, :)) > 0
+		centroids(i, :) = mean(X(current_idx, :));
+	end
+end
 % =============================================================
-
 
 end
 
