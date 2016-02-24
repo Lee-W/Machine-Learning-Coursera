@@ -28,10 +28,13 @@ centroids = zeros(K, n);
 
 for i=1:K
 	current_idx = find(idx == i);
-	if mean(X(current_idx, :)) > 0
+	if size(X(current_idx, :), 1) > 0
 		centroids(i, :) = mean(X(current_idx, :));
 	end
 end
+
+% fprintf("-----\n");
+% centroids
 % =============================================================
 
 end
